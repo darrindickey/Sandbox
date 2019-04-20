@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "595303042059",
+    "firebase_url": "https://sandbox-d8a40.firebaseio.com",
+    "project_id": "sandbox-d8a40",
+    "storage_bucket": "sandbox-d8a40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595303042059:android:4d01677d88fc5f94",
+        "android_client_info": {
+          "package_name": "com.noco.sandbox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595303042059-5h5s10l7g4shvlo4ntc92dd9j8vgsbe2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeSR-vO-QqRgtfa3t2tdPN1ukpRMxDjbw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "595303042059-5h5s10l7g4shvlo4ntc92dd9j8vgsbe2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "595303042059-keasn8h01i7jlv4dcjp2d4p9vv8cd0lq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.noco.sandbox"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
