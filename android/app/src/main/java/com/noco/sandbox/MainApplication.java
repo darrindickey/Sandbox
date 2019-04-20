@@ -1,4 +1,4 @@
-package com.invertase.rnfirebasestarter;
+package com.noco.sandbox;
 
 import android.app.Application;
 
