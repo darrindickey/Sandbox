@@ -1357,6 +1357,7 @@
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
+					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1383,6 +1384,7 @@
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
+					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1463,6 +1465,7 @@
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
+					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.RNFirebaseStarter-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1498,6 +1501,7 @@
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
+					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.RNFirebaseStarter-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1532,6 +1536,7 @@
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
+					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.RNFirebaseStarter-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1566,6 +1571,7 @@
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
+					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.RNFirebaseStarter-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
