@@ -111,6 +111,7 @@ android {
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
+        missingDimensionStrategy 'react-native-camera', 'general'
     }
     splits {
         abi {
@@ -142,8 +143,13 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-camera')
+    implementation project(':react-native-vector-icons')
+    implementation project(':react-native-splash-screen')
+    implementation project(':react-native-gesture-handler')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation "com.google.firebase:firebase-core:16.0.8"
 
     /* ----------------------------
     *    REACT NATIVE FIREBASE
