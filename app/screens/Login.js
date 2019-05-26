@@ -12,7 +12,7 @@ class Login extends Component {
       firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(() => this.props.navigation.navigate('Main'))
+      .then(() => this.props.navigation.navigate('Feed'))
       .catch(error => this.setState({ errorMessage: error.message }))
     } else {
       this.setState({ errorMessage: "Form fields may not be empty." })
@@ -22,7 +22,7 @@ class Login extends Component {
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(() => this.props.navigation.navigate('Main'))
+      .then(() => this.props.navigation.navigate('Feed'))
       .catch(error => this.setState({ errorMessage: error.message }))
   }
 
@@ -52,8 +52,8 @@ class Login extends Component {
         />
         <Button title="Login" onPress={this.handleLogin} />
         <Button
-          title="Done't have an account? Sign Up"
-          onPress={() => this.props.navigation.navigate('SignUp')}
+          title="Don't have an account? Sign Up"
+          onPress={() => this.props.navigation.navigate('Signup')}
         />
       </View>
     )

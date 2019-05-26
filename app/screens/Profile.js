@@ -17,7 +17,7 @@ class Profile extends Component {
     const { navigate } = this.props.navigation
     try {
       await firebase.auth().signOut()
-      navigate('Splash')
+      navigate('LoggedOut')
     } catch (e) {
       console.log(e)
     }

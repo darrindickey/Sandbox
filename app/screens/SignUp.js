@@ -9,7 +9,7 @@ class SignUp extends Component {
     firebase
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .then(() => this.props.navigation.navigate('Main'))
+      .then(() => this.props.navigation.navigate('Feed'))
       .catch(error => this.setState({ errorMessage: error.message }))
   }
 

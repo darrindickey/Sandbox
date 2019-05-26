@@ -1,7 +1,13 @@
-import { createSwitchNavigator, createStackNavigator, createBottomTabNavigator, createAppContainer, createDrawerNavigator } from 'react-navigation'
-import { View, Button, Text, StyleSheet } from 'react-native'
+import React, { Component } from 'react';
+import { View, Text, StyleSheet, Button } from 'react-native';
 import { Icon } from 'react-native-elements'
-import React, { Component } from 'react'
+import {
+  createSwitchNavigator,
+  createAppContainer,
+  createDrawerNavigator,
+  createBottomTabNavigator,
+  createStackNavigator
+} from 'react-navigation';
 
 import Loading from '../screens/Loading'
 import SignUp from '../screens/SignUp'
@@ -10,31 +16,63 @@ import Main from '../screens/Main'
 import Profile from '../screens/Profile'
 import Settings from '../screens/Settings'
 import Camera from '../screens/Camera'
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
-const TabNavigator = createBottomTabNavigator(
-  {
-    Home: {
-      screen: Main,
-      navigationOptions: {
-        title: "Home"
-      }
-    },
-    Camera: { screen: Camera },
-    Profile: { screen: Profile },
-    Settings: { screen: Settings }
-  } 
-)
+class Feed extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Feed</Text>
+      </View>
+    );
+  }
+}
 
-const LoggedInNavigator = createStackNavigator(
+const DashboardTabNavigator = createBottomTabNavigator(
   {
-    // Home: {
-    //   screen: Main,
-    //   navigationOptions: {
-    //     title: "Home"
-    //   }
-    // },
-    Tabs: {screen: TabNavigator}
+    Feed,
+    Profile,
+    Settings
+  },
+  {
+    navigationOptions: ({ navigation }) => {
+      const { routeName } = navigation.state.routes[navigation.state.index];
+      return {
+        headerTitle: routeName
+      };
+    }
+  }
+);
+
+// const drawerIcon = (name, tintColor) => (
+//   <Icon
+//     raised
+//     name={name}
+//     type='font-awesome'
+//     color='#f50'
+//     onPress={() => console.log('hello')} 
+//   />
+// );
+
+const DashboardStackNavigator = createStackNavigator(
+  {
+    DashboardTabNavigator: DashboardTabNavigator
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => {
+      return {
+        headerLeft: (
+          <Icon
+            raised
+            type='material'
+            style={{ paddingLeft: 10 }}
+            onPress={() => navigation.openDrawer()}
+            name='camera_alt'
+            size={30}
+          />
+        )
+      };
+    }
   }
 )
 
@@ -54,53 +92,33 @@ const LoggedOutNavigator = createStackNavigator(
     }
   }
 )
+  
 
-const DrawerNavigator = createDrawerNavigator(
-  {
-    Camera: {
-      screen: Camera,
-      navigationOptions: {
-        title: "Camera",
-        headerTitle: (
-          <View>
-            <TouchableOpacity
-              onPress={() => navigation.toggleDrawer()}
-            >
-              <Icon
-                name='camera'
-                type='material'
-                size={24}
-                color='#999999'
-              />
-            </TouchableOpacity>
-          </View>
-        )
-        // drawerLabel: "Camera",
-        // drawerIcon: ({ tintColor }) => (
-        //   <Icon
-        //     onPress={() => navigation.toggleDrawer()}
-        //     name='camera'
-        //     type='material'
-        //     size={24}
-        //     color='#999999'
-        //   />
-        // )
-      }
-    }
+const AppDrawerNavigator = createDrawerNavigator({
+  Dashboard: {
+    screen: DashboardStackNavigator
   }
-)
+})
 
 const AppNavigator = createAppContainer(createSwitchNavigator(
   {
     AppLoading: Loading,
     LoggedOut: LoggedOutNavigator,
-    LoggedIn: LoggedInNavigator,
-    Drawer: DrawerNavigator
+    // Welcome: { screen: WelcomeScreen },
+    Dashboard: { screen: AppDrawerNavigator }
   }, {
     headerMode: 'none'
   }, {
     initialRouteName: 'AppLoading'
   }
 ))
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
+});
 
 export default AppNavigator

@@ -8,8 +8,6 @@ class Settings extends Component {
 
   componentDidMount() {
     const { currentUser } = firebase.auth()
-
-    console.log('currentUser', currentUser)
     this.setState({ currentUser })
   }
 
