@@ -31,6 +31,8 @@ target 'Sandbox' do
 
   pod 'react-native-camera', :path => '../node_modules/react-native-camera'
 
+  pod 'ReactNativeLocalization', :path => '../node_modules/react-native-localization'
+
 end
 
 target 'Sandbox-tvOS' do

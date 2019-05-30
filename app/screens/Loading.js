@@ -7,11 +7,8 @@ class Loading extends Component {
   componentDidMount() {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        console.log('user', user)
         this.props.navigation.navigate('Feed')
-        // SplashScreen.hide()
       } else {
-        console.log('no user')
         this.props.navigation.navigate('LoggedOut')
       }
       // this.props.navigation.navigate(user ? 'Main' : 'SignUp')

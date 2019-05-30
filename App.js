@@ -4,7 +4,7 @@ import { StyleSheet, Platform, Image, Text, View, ScrollView } from 'react-nativ
 import firebase from 'react-native-firebase'
 import Loading from './app/screens/Loading'
 import SignUp from './app/screens/SignUp'
-import Login from './app/screens/Login'
+import LoginScreen from './app/screens/Login/LoginScreen'
 import Main from './app/screens/Main'
 import AppNavigator from './app/components/AppNavigator'
 

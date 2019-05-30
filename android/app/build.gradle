@@ -143,6 +143,7 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-localization')
     implementation project(':react-native-firebase')
     implementation project(':react-native-camera')
     implementation project(':react-native-vector-icons')

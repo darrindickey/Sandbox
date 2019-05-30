@@ -11,7 +11,7 @@ import {
 
 import Loading from '../screens/Loading'
 import SignUp from '../screens/SignUp'
-import Login from '../screens/Login'
+import LoginScreen from '../screens/Login/LoginScreen'
 import Main from '../screens/Main'
 import Profile from '../screens/Profile'
 import Settings from '../screens/Settings'
@@ -44,16 +44,6 @@ const DashboardTabNavigator = createBottomTabNavigator(
   }
 );
 
-// const drawerIcon = (name, tintColor) => (
-//   <Icon
-//     raised
-//     name={name}
-//     type='font-awesome'
-//     color='#f50'
-//     onPress={() => console.log('hello')} 
-//   />
-// );
-
 const DashboardStackNavigator = createStackNavigator(
   {
     DashboardTabNavigator: DashboardTabNavigator
@@ -64,10 +54,11 @@ const DashboardStackNavigator = createStackNavigator(
         headerLeft: (
           <Icon
             raised
+            reverse
             type='material'
             style={{ paddingLeft: 10 }}
             onPress={() => navigation.openDrawer()}
-            name='camera_alt'
+            name='camera-alt'
             size={30}
           />
         )
@@ -79,7 +70,7 @@ const DashboardStackNavigator = createStackNavigator(
 const LoggedOutNavigator = createStackNavigator(
   {
     Login: {
-      screen: Login,
+      screen: LoginScreen,
       navigationOptions: {
         title: "Login"
       }
