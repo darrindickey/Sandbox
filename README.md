@@ -1,3 +1,11 @@
+A simple React Native starter application based off of the React-Native-Firebase Starter project.
+Includes:
+- [React Native Firebase](https://github.com/invertase/react-native-firebase)
+- [React Navigation](https://github.com/react-navigation/react-navigation)
+- [Formik](https://github.com/jaredpalmer/formik)
+- Jest
+
+React-Native-Firebase README begins below
 ## React Native Firebase Starter<a href="https://invertase.io/oss/react-native-firebase"><img align="left" src="https://i.imgur.com/JIyBtKW.png" width="180px"></a>
 
 [![Backers on Open Collective](https://opencollective.com/react-native-firebase/backers/badge.svg)](#backers)
