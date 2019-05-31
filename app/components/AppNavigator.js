@@ -16,6 +16,7 @@ import Main from '../screens/Main'
 import Profile from '../screens/Profile'
 import Settings from '../screens/Settings'
 import Camera from '../screens/Camera'
+import Dashboard from '../screens/Dashboard'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
 class Feed extends Component {
@@ -30,7 +31,7 @@ class Feed extends Component {
 
 const DashboardTabNavigator = createBottomTabNavigator(
   {
-    Feed,
+    Dashboard,
     Profile,
     Settings
   },
@@ -44,7 +45,7 @@ const DashboardTabNavigator = createBottomTabNavigator(
   }
 );
 
-const DashboardStackNavigator = createStackNavigator(
+const LoggedInStackNavigator = createStackNavigator(
   {
     DashboardTabNavigator: DashboardTabNavigator
   },
@@ -53,12 +54,10 @@ const DashboardStackNavigator = createStackNavigator(
       return {
         headerLeft: (
           <Icon
-            raised
-            reverse
             type='material'
-            style={{ paddingLeft: 10 }}
+            style={{ paddingLeft: 25 }}
             onPress={() => navigation.openDrawer()}
-            name='camera-alt'
+            name='menu'
             size={30}
           />
         )
@@ -86,8 +85,8 @@ const LoggedOutNavigator = createStackNavigator(
   
 
 const AppDrawerNavigator = createDrawerNavigator({
-  Dashboard: {
-    screen: DashboardStackNavigator
+  Menu: {
+    screen: LoggedInStackNavigator
   }
 })
 
@@ -96,7 +95,7 @@ const AppNavigator = createAppContainer(createSwitchNavigator(
     AppLoading: Loading,
     LoggedOut: LoggedOutNavigator,
     // Welcome: { screen: WelcomeScreen },
-    Dashboard: { screen: AppDrawerNavigator }
+    LoggedIn: { screen: AppDrawerNavigator }
   }, {
     headerMode: 'none'
   }, {

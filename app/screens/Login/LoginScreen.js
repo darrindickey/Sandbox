@@ -34,7 +34,7 @@ export default class LoginScreen extends Component {
 //       firebase
 //       .auth()
 //       .signInWithEmailAndPassword(email, password)
-//       .then(() => this.props.navigation.navigate('Feed'))
+//       .then(() => this.props.navigation.navigate('Dashboard'))
 //       .catch(error => this.setState({ errorMessage: error.message }))
 //     } else {
 //       this.setState({ errorMessage: "Form fields may not be empty." })
@@ -44,7 +44,7 @@ export default class LoginScreen extends Component {
 //     firebase
 //       .auth()
 //       .signInWithEmailAndPassword(email, password)
-//       .then(() => this.props.navigation.navigate('Feed'))
+//       .then(() => this.props.navigation.navigate('Dashbaord'))
 //       .catch(error => this.setState({ errorMessage: error.message }))
 //   }
 
